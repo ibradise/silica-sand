@@ -1,0 +1,36 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+}
+
+.card:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.body {
+  padding: 1rem 1.25rem 1.25rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.name {
+  font-size: 1.15rem;
+  color: var(--accent);
+}
+
+.card:hover .name {
+  text-decoration: underline;
+}
+
+.description {
+  font-size: 0.95rem;
+}
