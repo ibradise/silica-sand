@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { formatAddress, products, siteConfig, telHref } from "@/config/site";
 import { ProductCard } from "@/components/ProductCard";
@@ -23,22 +24,35 @@ export default function HomePage() {
   return (
     <>
       <section className={styles.hero}>
-        <div className={styles.heroMedia} aria-hidden="true" />
+        <div className={styles.heroMedia} aria-hidden="true">
+          <Image
+            src="/images/hero-bg.jpg"
+            alt=""
+            fill
+            priority
+            className={styles.heroBg}
+            sizes="100vw"
+          />
+        </div>
         <div className={styles.heroScrim} aria-hidden="true" />
         <div className={`container ${styles.heroInner}`}>
           <h1 className={styles.title}>{siteConfig.name}</h1>
           <p className={styles.subtitle}>{siteConfig.description}</p>
           <div className={styles.actions}>
-            <Link href="/products" className="button button-primary">
+            <Link href="/products" className="button button-secondary button-light">
               View products
             </Link>
             <a
               href={telHref(contact.phone)}
-              className="button button-secondary button-light"
+              className="button button-primary"
             >
               Call {contact.phone}
             </a>
           </div>
+        </div>
+        <div className={styles.scrollCue} aria-hidden="true">
+          <span>Scroll</span>
+          <span className={styles.arrow}>↓</span>
         </div>
       </section>
 

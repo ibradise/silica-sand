@@ -1,10 +1,23 @@
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
-  background: rgb(255 255 255 / 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
+  background: transparent;
+  transition:
+    background 0.4s ease,
+    padding 0.4s ease,
+    border-color 0.4s ease,
+    backdrop-filter 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+  background: rgb(15 23 42 / 0.7);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-bottom-color: rgb(255 255 255 / 0.1);
 }
 
 .inner {
@@ -13,18 +26,23 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem 1.5rem;
-  padding-block: 1rem;
+  padding-block: 1.25rem;
+  transition: padding 0.4s ease;
+}
+
+.scrolled .inner {
+  padding-block: 0.9rem;
 }
 
 .brand {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--foreground);
+  color: #ffffff;
 }
 
 .brand:hover {
   text-decoration: none;
-  color: var(--accent);
+  color: #93c5fd;
 }
 
 /* Desktop nav */
@@ -34,18 +52,40 @@
 
 .nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 2.75rem;
   list-style: none;
 }
 
 .nav a {
-  color: var(--muted);
+  position: relative;
+  color: rgb(226 232 240);
   font-weight: 500;
 }
 
-.nav a:hover {
-  color: var(--accent);
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background: #93c5fd;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #ffffff;
   text-decoration: none;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+.nav:has(a:hover) a.active::after {
+  width: 0;
 }
 
 @media (min-width: 48rem) {
@@ -79,7 +119,7 @@
   display: block;
   width: 100%;
   height: 2px;
-  background: var(--foreground);
+  background: #ffffff;
   border-radius: 1px;
   transition: transform 150ms ease, opacity 150ms ease;
 }

@@ -46,6 +46,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  padding-top: 72px;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -80,7 +84,7 @@ img {
 
 .container {
   width: 100%;
-  max-width: 72rem;
+  max-width: 90rem;
   margin-inline: auto;
   padding-inline: 1.25rem;
 }
@@ -130,6 +134,7 @@ img {
   background: var(--accent);
   color: #fff;
   box-shadow: var(--shadow-sm);
+  opacity: 0.8;
 }
 
 .button-primary:hover {
@@ -137,6 +142,7 @@ img {
   color: #fff;
   box-shadow: var(--shadow-md);
   transform: translateY(-1px);
+  opacity: 1;
 }
 
 .button-secondary {
@@ -153,13 +159,15 @@ img {
 .button-light {
   background: transparent;
   color: #ffffff;
-  border: 1px solid rgb(255 255 255 / 0.4);
+  border: 1px solid rgb(255 255 255 / 0.35);
+  opacity: 1;
 }
 
 .button-light:hover {
   background: rgb(255 255 255 / 0.15);
   border-color: #ffffff;
   color: #ffffff;
+  opacity: 1;
 }
 
 .card {
