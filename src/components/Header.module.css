@@ -2,9 +2,10 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgb(255 255 255 / 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
+  background: rgb(255 255 255 / 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgb(255 255 255 / 0.1);
 }
 
 .inner {
@@ -19,12 +20,12 @@
 .brand {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--foreground);
+  color: #ffffff;
 }
 
 .brand:hover {
   text-decoration: none;
-  color: var(--accent);
+  color: #93c5fd;
 }
 
 /* Desktop nav */
@@ -39,12 +40,12 @@
 }
 
 .nav a {
-  color: var(--muted);
+  color: rgb(226 232 240);
   font-weight: 500;
 }
 
 .nav a:hover {
-  color: var(--accent);
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -79,7 +80,7 @@
   display: block;
   width: 100%;
   height: 2px;
-  background: var(--foreground);
+  background: #ffffff;
   border-radius: 1px;
   transition: transform 150ms ease, opacity 150ms ease;
 }
