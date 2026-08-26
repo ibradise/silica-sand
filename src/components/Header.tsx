@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { navigation, siteConfig } from "@/config/site";
+import { MobileNav } from "./MobileNav";
 import styles from "./Header.module.css";
 
 export function Header() {
@@ -9,7 +10,7 @@ export function Header() {
         <Link href="/" className={styles.brand}>
           {siteConfig.name}
         </Link>
-        <nav aria-label="Main navigation">
+        <nav aria-label="Main navigation" className={styles.desktopNav}>
           <ul className={styles.nav}>
             {navigation.map((item) => (
               <li key={item.href}>
@@ -18,6 +19,7 @@ export function Header() {
             ))}
           </ul>
         </nav>
+        <MobileNav />
       </div>
     </header>
   );

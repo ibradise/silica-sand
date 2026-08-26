@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Contact details, address and opening hours for our office in Ethiopia.",
+  openGraph: {
+    title: "Contact",
+    description:
+      "Contact details, address and opening hours for our office in Ethiopia.",
+  },
+  alternates: {
+    canonical: "./contact",
+  },
 };
 
 export default function ContactPage() {
@@ -18,11 +26,13 @@ export default function ContactPage() {
   return (
     <section className="section">
       <div className="container">
-        <h1 className="section-title">Contact us</h1>
-        <p className={`muted ${styles.intro}`}>
-          Visit our office or reach out by phone. We are happy to answer your
-          questions about our silica products.
-        </p>
+        <div className="page-header">
+          <h1 className="section-title">Contact us</h1>
+          <p className="muted intro">
+            Visit our office or reach out by phone. We are happy to answer your
+            questions about our silica products.
+          </p>
+        </div>
 
         <div className={styles.grid}>
           <div className={`card ${styles.card}`}>

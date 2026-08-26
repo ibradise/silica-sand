@@ -14,7 +14,7 @@ export function Footer() {
       <div className={`container ${styles.inner}`}>
         <div>
           <p className={styles.name}>{siteConfig.name}</p>
-          <address className={`muted ${styles.address}`}>
+          <address className={styles.address}>
             {formatAddress()}
           </address>
         </div>
@@ -42,7 +42,7 @@ export function Footer() {
 
         <div>
           <h2 className={styles.heading}>Hours</h2>
-          <ul className={`muted ${styles.list}`}>
+          <ul className={styles.list}>
             {openingHours.map((entry) => (
               <li key={entry.days}>
                 {entry.days}: {entry.hours}
@@ -56,12 +56,14 @@ export function Footer() {
           <ul className={styles.list}>
             <li><Link href="/">Home</Link></li>
             <li><Link href="/products">Products</Link></li>
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/faq">FAQ</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>
         </div>
       </div>
 
-      <div className={`container muted ${styles.bottom}`}>
+      <div className={`container ${styles.bottom}`}>
         <p>&copy; {new Date().getFullYear()} {siteConfig.name}</p>
       </div>
     </footer>

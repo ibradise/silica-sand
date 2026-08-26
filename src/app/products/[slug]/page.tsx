@@ -24,7 +24,19 @@ export async function generateMetadata({
   const { slug } = await params;
   const product = products.find((p) => p.slug === slug);
   if (!product) return {};
-  return { title: product.name, description: product.description };
+  const url = `/products/${product.slug}`;
+  return {
+    title: product.name,
+    description: product.description,
+    openGraph: {
+      title: product.name,
+      description: product.description,
+      url,
+    },
+    alternates: {
+      canonical: url,
+    },
+  };
 }
 
 export default async function ProductPage({ params }: { params: Params }) {

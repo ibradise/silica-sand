@@ -1,5 +1,9 @@
 .header {
-  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgb(255 255 255 / 0.92);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -23,6 +27,11 @@
   color: var(--accent);
 }
 
+/* Desktop nav */
+.desktopNav {
+  display: none;
+}
+
 .nav {
   display: flex;
   gap: 1.5rem;
@@ -37,4 +46,114 @@
 .nav a:hover {
   color: var(--accent);
   text-decoration: none;
+}
+
+@media (min-width: 48rem) {
+  .desktopNav {
+    display: block;
+  }
+
+  .hamburger,
+  .overlay,
+  .mobileNav {
+    display: none !important;
+  }
+}
+
+/* Hamburger button */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 70;
+}
+
+.bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--foreground);
+  border-radius: 1px;
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+
+.barOpen:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.barOpen:nth-child(2) {
+  opacity: 0;
+}
+
+.barOpen:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(15 23 42 / 0.4);
+  z-index: 55;
+}
+
+/* Mobile nav panel */
+.mobileNav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(20rem, 85vw);
+  height: 100vh;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  z-index: 60;
+  transform: translateX(100%);
+  transition: transform 200ms ease;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNavOpen {
+  transform: translateX(0);
+}
+
+.mobileNavHeader {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobileNavList {
+  list-style: none;
+  display: grid;
+  gap: 0;
+}
+
+.mobileNavList li {
+  border-bottom: 1px solid var(--border);
+}
+
+.mobileNavList a {
+  display: block;
+  padding: 0.9rem 1.25rem;
+  color: var(--foreground);
+  font-weight: 500;
+}
+
+.mobileNavList a:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.mobileNavActive {
+  color: var(--accent) !important;
+  background: var(--accent-soft);
 }

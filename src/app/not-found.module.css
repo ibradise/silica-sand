@@ -1,0 +1,21 @@
+.page {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding-block: 6rem 4rem;
+}
+
+.code {
+  font-size: clamp(4rem, 10vw, 7rem);
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.message {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}

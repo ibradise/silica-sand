@@ -1,10 +1,5 @@
-.intro {
-  max-width: 40rem;
-  margin-bottom: 2rem;
-}
-
 .grid {
   display: grid;
-  gap: 1.25rem;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
 }

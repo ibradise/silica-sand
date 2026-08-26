@@ -25,8 +25,8 @@ Nothing in later phases should use unverified information.
       (see `docs/BUSINESS_INFO_CHECKLIST.md`)
 - [ ] Collect verified business information from the owner
       (fill in `docs/BUSINESS_INFO_CHECKLIST.md`)
-- [ ] Investigate the existing GBP website URL relationship
-      (`silicasupplier.com/DiribaGemechu` → Jinsha page) with the owner
+- [x] Investigate the existing GBP website URL relationship — **RESOLVED**:
+      mistakenly entered URL; `silicasupplier.com` is unrelated
 - [ ] Basic keyword/intent research for relevant Ethiopian searches
       (validate which target queries actually match real offerings)
 - [ ] Confirm domain choice; ensure it is purchased/owned by the business
@@ -36,34 +36,35 @@ Nothing in later phases should use unverified information.
 - [x] Expand `site.ts` into a typed structure covering NAP (name/address/
       phone), opening hours, contact channels, and product data slots
       (placeholder values — tracked in `docs/PLACEHOLDERS.md`)
-- [ ] Decide page set based on real content availability (home, products,
-      contact, about — only pages with genuine purpose)
+- [x] Decide page set: home, products, about, FAQ, contact (all built)
 - [ ] Set up Vercel deployment pipeline (temporary domain first)
 - [ ] Establish baseline: deploy skeleton, submit to Search Console once live
 
-## Phase 3 — Website Implementation
+## Phase 3 — Website Implementation ✅ (complete)
 
 Built with sample data tracked in `docs/PLACEHOLDERS.md`; all facts to be
 replaced when verified information arrives.
 
 - [x] Global layout: header/nav/footer with consistent NAP
-- [x] Home page (hero, products preview, visit/contact info sections)
+- [x] Home page (hero, products preview, visit/contact info, CTA section)
 - [x] Products pages (index + per-product detail pages from site config)
 - [x] Contact page (call/visit/hours cards; WhatsApp + Maps slots ready)
-- [ ] About page (blocked: needs real company information)
-- [ ] FAQ page (blocked: needs real customer questions and answers)
+- [x] About page (placeholder sections: story, mission, what we do, why us)
+- [x] FAQ page (8 expandable questions with placeholder answers)
+- [x] Mobile responsive hamburger menu with accessible toggle
+- [x] Custom 404 page
 - [ ] Design polish pass on real devices / feedback from owner
 
 ## Phase 4 — Technical SEO
 
-- [ ] Unique title + meta description per page (from site config)
-- [ ] Proper heading hierarchy across all pages
+- [x] Unique title + meta description per page (from site config)
+- [x] Proper heading hierarchy across all pages
 - [x] XML sitemap (`app/sitemap.ts`)
 - [x] robots.txt (`app/robots.ts`)
-- [ ] Canonical URLs
-- [ ] Structured data where appropriate (LocalBusiness schema with real data)
-- [ ] Image optimization (next/image, proper alt text, compressed assets)
-- [ ] Open Graph / social metadata
+- [x] Canonical URLs in metadata
+- [x] LocalBusiness JSON-LD structured data
+- [x] Open Graph / social metadata per page
+- [ ] Image optimization (alt text on real photos when available)
 - [ ] Core Web Vitals check on slow/mobile connections
 
 ## Phase 5 — Google Integration & Launch
@@ -88,10 +89,7 @@ replaced when verified information arrives.
 
 Tracked separately because they block or affect other tasks:
 
-1. **GBP website URL** — currently points to
-   `silicasupplier.com/DiribaGemechu` showing a Chinese company (Jinsha).
-   Relationship unknown. Must be clarified with the owner before changing.
-2. **Office relocation** — GBP still shows the old location; needs updating
-   with verified new address.
+1. **~~GBP website URL~~** — **RESOLVED:** mistakenly entered URL; `silicasupplier.com` is unrelated. Fix: update GBP website field once real domain is configured.
+2. **Office relocation** — GBP still shows the old location; needs updating with verified new address.
 3. **Domain ownership** — no custom domain confirmed yet. Must be registered
    under the business owner's account.

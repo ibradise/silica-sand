@@ -27,14 +27,14 @@ export const siteConfig = {
     mapsLink: null as string | null,
   },
 
-  openingHours: [
-    { days: "[Days]", hours: "[e.g. 8:30 - 17:30]" },
-  ],
+  openingHours: [{ days: "[Days]", hours: "[e.g. 8:30 - 17:30]" }],
 };
 
 export const navigation = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
+  { label: "About", href: "/about" },
+  { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -64,9 +64,7 @@ export const products: Product[] = [
 
 export function formatAddress(): string {
   const { street, subCity, city, region, country } = siteConfig.address;
-  return [street, subCity, city, region, country]
-    .filter(Boolean)
-    .join(", ");
+  return [street, subCity, city, region, country].filter(Boolean).join(", ");
 }
 
 export function telHref(phone: string): string {

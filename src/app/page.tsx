@@ -1,13 +1,21 @@
-import Image from "next/image";
+import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  formatAddress,
-  products,
-  siteConfig,
-  telHref,
-} from "@/config/site";
+import { formatAddress, products, siteConfig, telHref } from "@/config/site";
 import { ProductCard } from "@/components/ProductCard";
 import styles from "./home.module.css";
+
+export const metadata: Metadata = {
+  title: siteConfig.name,
+  description: siteConfig.description,
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: "./",
+  },
+  alternates: {
+    canonical: "./",
+  },
+};
 
 export default function HomePage() {
   const { contact, address, openingHours } = siteConfig;
@@ -17,14 +25,15 @@ export default function HomePage() {
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
           <h1 className={styles.title}>{siteConfig.name}</h1>
-          <p className={`muted ${styles.subtitle}`}>
-            {siteConfig.description}
-          </p>
+          <p className={`muted ${styles.subtitle}`}>{siteConfig.description}</p>
           <div className={styles.actions}>
             <Link href="/products" className="button button-primary">
               View products
             </Link>
-            <a href={telHref(contact.phone)} className="button button-secondary">
+            <a
+              href={telHref(contact.phone)}
+              className="button button-secondary"
+            >
               Call {contact.phone}
             </a>
           </div>
@@ -54,7 +63,11 @@ export default function HomePage() {
               <p>{formatAddress()}</p>
               {address.mapsLink && (
                 <p>
-                  <a href={address.mapsLink} rel="noopener noreferrer" target="_blank">
+                  <a
+                    href={address.mapsLink}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
                     Open in Google Maps
                   </a>
                 </p>
@@ -74,8 +87,7 @@ export default function HomePage() {
             <div className={`card ${styles.infoCard}`}>
               <h3>Contact</h3>
               <p>
-                Phone:{" "}
-                <a href={telHref(contact.phone)}>{contact.phone}</a>
+                Phone: <a href={telHref(contact.phone)}>{contact.phone}</a>
               </p>
               {contact.email && (
                 <p>
@@ -92,15 +104,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={`section ${styles.section}`}>
-        <div className="container">
-          <Image
-            src="/images/placeholder.svg"
-            alt=""
-            width={800}
-            height={300}
-            className={styles.banner}
-          />
+      <section className={`section ${styles.ctaSection}`}>
+        <div className={`container ${styles.ctaInner}`}>
+          <h2 className={styles.ctaTitle}>Ready to discuss your requirements?</h2>
+          <p className={`muted ${styles.ctaText}`}>
+            Visit our office or contact us by phone. We are happy to answer your
+            questions about our silica products.
+          </p>
+          <div className={styles.ctaActions}>
+            <a href={telHref(contact.phone)} className="button button-primary">
+              Call {contact.phone}
+            </a>
+            <Link href="/contact" className="button button-secondary">
+              Contact page
+            </Link>
+          </div>
         </div>
       </section>
     </>
