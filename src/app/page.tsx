@@ -23,16 +23,18 @@ export default function HomePage() {
   return (
     <>
       <section className={styles.hero}>
+        <div className={styles.heroMedia} aria-hidden="true" />
+        <div className={styles.heroScrim} aria-hidden="true" />
         <div className={`container ${styles.heroInner}`}>
           <h1 className={styles.title}>{siteConfig.name}</h1>
-          <p className={`muted ${styles.subtitle}`}>{siteConfig.description}</p>
+          <p className={styles.subtitle}>{siteConfig.description}</p>
           <div className={styles.actions}>
             <Link href="/products" className="button button-primary">
               View products
             </Link>
             <a
               href={telHref(contact.phone)}
-              className="button button-secondary"
+              className="button button-secondary button-light"
             >
               Call {contact.phone}
             </a>

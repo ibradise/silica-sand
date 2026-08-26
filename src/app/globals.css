@@ -150,6 +150,18 @@ img {
   color: var(--accent-strong);
 }
 
+.button-light {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgb(255 255 255 / 0.4);
+}
+
+.button-light:hover {
+  background: rgb(255 255 255 / 0.15);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
