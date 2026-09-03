@@ -1,6 +1,6 @@
 .card {
   display: grid;
-  grid-template-rows: 16rem 1fr;
+  grid-template-rows: 24rem 1fr;
   height: 100%;
   color: inherit;
   overflow: hidden;
@@ -40,6 +40,6 @@
 
 @media (min-width: 48rem) {
   .card {
-    grid-template-rows: 20rem 1fr;
+    grid-template-rows: 28rem 1fr;
   }
 }

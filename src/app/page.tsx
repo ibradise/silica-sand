@@ -58,15 +58,20 @@ export default function HomePage() {
 
       <section className={`section ${styles.section}`}>
         <div className="container">
-          <h2 className="section-title">Our products</h2>
+          <div className={styles.sectionHead}>
+            <div>
+              <p className={styles.eyebrow}>[ OUR PRODUCTS ]</p>
+              <h2 className="section-title">What we supply</h2>
+            </div>
+            <Link href="/products" className={styles.viewAll}>
+              View all products <span>→</span>
+            </Link>
+          </div>
           <div className={styles.grid}>
             {products.map((product) => (
               <ProductCard key={product.slug} product={product} />
             ))}
           </div>
-          <p className={styles.more}>
-            <Link href="/products">See all products</Link>
-          </p>
         </div>
       </section>
 

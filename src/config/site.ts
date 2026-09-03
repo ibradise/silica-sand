@@ -44,20 +44,41 @@ export const products: Product[] = [
     name: "Silica Sand",
     description:
       "Silica sand available at our office. Contact us for current availability, specifications and pricing.",
-    image: "/images/placeholder.svg",
+    image: "/images/sand.jpg",
   },
   {
     slug: "silica-powder",
     name: "Silica Powder",
     description:
       "Silica powder available at our office. Contact us for current availability, specifications and pricing.",
-    image: "/images/placeholder.svg",
+    image: "/images/powder.jpg",
   },
   {
     slug: "silica-quartz",
     name: "Silica Quartz",
     description:
       "Silica quartz available at our office. Contact us for current availability, specifications and pricing.",
+    image: "/images/quartz.jpg",
+  },
+  {
+    slug: "industrial-silica",
+    name: "Industrial Silica",
+    description:
+      "Industrial silica available at our office. Contact us for current availability, specifications and pricing.",
+    image: "/images/placeholder.svg",
+  },
+  {
+    slug: "silica-granules",
+    name: "Silica Granules",
+    description:
+      "Silica granules available at our office. Contact us for current availability, specifications and pricing.",
+    image: "/images/placeholder.svg",
+  },
+  {
+    slug: "quartz-sand",
+    name: "Quartz Sand",
+    description:
+      "Quartz sand available at our office. Contact us for current availability, specifications and pricing.",
     image: "/images/placeholder.svg",
   },
 ];
