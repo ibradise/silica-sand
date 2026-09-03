@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const { contact, address, openingHours } = siteConfig;
+  const { contacts, address, openingHours } = siteConfig;
 
   return (
     <section className="section">
@@ -35,28 +35,32 @@ export default function ContactPage() {
         </div>
 
         <div className={styles.grid}>
-          <div className={`card ${styles.card}`}>
-            <h2>Call</h2>
-            <p>
-              <a href={telHref(contact.phone)}>{contact.phone}</a>
-            </p>
-            {contact.whatsapp && (
-              <p>
-                <a
-                  href={`https://wa.me/${contact.whatsapp.replace(/\D/g, "")}`}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Chat on WhatsApp
-                </a>
-              </p>
-            )}
-            {contact.email && (
-              <p>
-                <a href={`mailto:${contact.email}`}>{contact.email}</a>
-              </p>
-            )}
-          </div>
+          {contacts.map((entry, index) => (
+            <div key={index} className={`card ${styles.card}`}>
+              <h2>{entry.label.includes("[") ? `Contact ${index + 1}` : entry.label}</h2>
+              {entry.phone && (
+                <p>
+                  <a href={telHref(entry.phone)}>{entry.phone}</a>
+                </p>
+              )}
+              {entry.whatsapp && !entry.whatsapp.includes("[") && (
+                <p>
+                  <a
+                    href={`https://wa.me/${entry.whatsapp.replace(/\D/g, "")}`}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Chat on WhatsApp
+                  </a>
+                </p>
+              )}
+              {entry.email && !entry.email.includes("[") && (
+                <p>
+                  <a href={`mailto:${entry.email}`}>{entry.email}</a>
+                </p>
+              )}
+            </div>
+          ))}
 
           <div className={`card ${styles.card}`}>
             <h2>Visit</h2>

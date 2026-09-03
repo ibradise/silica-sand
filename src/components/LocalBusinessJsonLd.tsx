@@ -1,7 +1,13 @@
 import { siteConfig } from "@/config/site";
 
+const isPlaceholder = (value: string | null | undefined): boolean =>
+  typeof value === "string" && value.includes("[");
+
 export function LocalBusinessJsonLd() {
-  const { name, description, contact, address, openingHours } = siteConfig;
+  const { name, description, contacts, address, openingHours } = siteConfig;
+
+  const primaryPhone = contacts.find((c) => c.phone && !isPlaceholder(c.phone))?.phone;
+  const primaryEmail = contacts.find((c) => c.email && !isPlaceholder(c.email))?.email;
 
   return (
     <script
@@ -13,22 +19,26 @@ export function LocalBusinessJsonLd() {
           name,
           description,
           url: siteConfig.url,
-          telephone: contact.phone !== "[Phone Number]" ? contact.phone : undefined,
-          email: contact.email,
+          telephone: primaryPhone,
+          email: primaryEmail,
           address: {
             "@type": "PostalAddress",
-            streetAddress: address.street !== "[Street / Landmark]" ? address.street : undefined,
-            addressLocality: address.city !== "[City]" ? address.city : undefined,
-            addressRegion: address.region !== "[Region]" ? address.region : undefined,
+            streetAddress: isPlaceholder(address.street) ? undefined : address.street,
+            addressLocality: isPlaceholder(address.city) ? undefined : address.city,
+            addressRegion: isPlaceholder(address.region) ? undefined : address.region,
             addressCountry: "ET",
           },
-          geo: undefined,
-          openingHoursSpecification: openingHours.map((entry) => ({
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: entry.days !== "[Days]" ? entry.days : undefined,
-            opens: entry.hours !== "[e.g. 8:30 - 17:30]" ? entry.hours.split(" - ")[0] : undefined,
-            closes: entry.hours !== "[e.g. 8:30 - 17:30]" ? entry.hours.split(" - ")[1] : undefined,
-          })),
+          openingHoursSpecification: openingHours
+            .filter((entry) => !isPlaceholder(entry.days) && !isPlaceholder(entry.hours))
+            .map((entry) => {
+              const [opens, closes] = entry.hours.split(" - ");
+              return {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: entry.days,
+                opens,
+                closes,
+              };
+            }),
           areaServed: {
             "@type": "Country",
             name: "Ethiopia",

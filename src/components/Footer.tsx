@@ -7,7 +7,7 @@ import {
 import styles from "./Footer.module.css";
 
 export function Footer() {
-  const { contact, openingHours } = siteConfig;
+  const { contacts, openingHours } = siteConfig;
 
   return (
     <footer className={styles.footer}>
@@ -22,21 +22,23 @@ export function Footer() {
         <div>
           <h2 className={styles.heading}>Contact</h2>
           <ul className={styles.list}>
-            <li>
-              <a href={telHref(contact.phone)}>{contact.phone}</a>
-            </li>
-            {contact.email && <li><a href={`mailto:${contact.email}`}>{contact.email}</a></li>}
-            {contact.whatsapp && (
-              <li>
-                <a
-                  href={`https://wa.me/${contact.whatsapp.replace(/\D/g, "")}`}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  WhatsApp
-                </a>
+            {contacts.map((entry, index) => (
+              <li key={index}>
+                {entry.phone && <a href={telHref(entry.phone)}>{entry.phone}</a>}
+                {entry.email && !entry.email.includes("[") && (
+                  <a href={`mailto:${entry.email}`}>{entry.email}</a>
+                )}
+                {entry.whatsapp && !entry.whatsapp.includes("[") && (
+                  <a
+                    href={`https://wa.me/${entry.whatsapp.replace(/\D/g, "")}`}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    WhatsApp
+                  </a>
+                )}
               </li>
-            )}
+            ))}
           </ul>
         </div>
 

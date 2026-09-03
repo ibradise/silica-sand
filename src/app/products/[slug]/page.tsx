@@ -65,8 +65,8 @@ export default async function ProductPage({ params }: { params: Params }) {
               {siteConfig.address.city}, Ethiopia.
             </p>
             <p>
-              <a href={telHref(siteConfig.contact.phone)} className="button button-primary">
-                Call {siteConfig.contact.phone}
+              <a href={telHref(siteConfig.contacts[0].phone!)} className="button button-primary">
+                Call {siteConfig.contacts[0].phone}
               </a>
             </p>
             <p className="muted">
