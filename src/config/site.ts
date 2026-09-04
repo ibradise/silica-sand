@@ -54,6 +54,11 @@ export const siteConfig = {
     { days: "Saturday", hours: "9:00 AM - 1:00 PM" },
     { days: "Sunday", hours: "Closed" },
   ] satisfies OpeningHoursEntry[],
+
+  social: {
+    facebook: "https://facebook.com/[your-page]",
+    telegram: "https://t.me/[your-handle]",
+  },
 };
 
 export const navigation = [
