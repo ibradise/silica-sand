@@ -11,7 +11,7 @@ export function ProductCard({ product }: { product: Product }) {
     >
       <Image
         src={product.image}
-        alt=""
+        alt={product.name}
         fill
         className={styles.image}
         sizes="(min-width: 48rem) 33vw, 100vw"
