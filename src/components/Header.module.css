@@ -20,6 +20,65 @@
   border-bottom-color: rgb(255 255 255 / 0.1);
 }
 
+.light {
+  background: rgb(255 255 255 / 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: rgb(15 23 42 / 0.08);
+}
+
+.light .brand {
+  color: #0f172a;
+}
+
+.light .brand:hover {
+  color: #1d4ed8;
+}
+
+.light .nav a {
+  color: #475569;
+}
+
+.light .nav a:hover,
+.light .nav a.active {
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.light .nav a:hover::after,
+.light .nav a.active::after {
+  background: #1d4ed8;
+}
+
+.light .bar {
+  background: #0f172a;
+}
+
+.scrolled.light {
+  background: rgb(15 23 42 / 0.7);
+}
+
+.scrolled.light .brand {
+  color: #ffffff;
+}
+
+.scrolled.light .brand:hover {
+  color: #93c5fd;
+}
+
+.scrolled.light .nav a {
+  color: rgb(226 232 240);
+}
+
+.scrolled.light .nav a:hover,
+.scrolled.light .nav a.active {
+  color: #ffffff;
+}
+
+.scrolled.light .bar {
+  background: #ffffff;
+}
+
 .inner {
   display: flex;
   flex-wrap: wrap;

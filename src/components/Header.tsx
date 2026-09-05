@@ -18,8 +18,20 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const isHome = pathname === "/";
+  const isProductDetail = pathname.startsWith("/products/");
+  const isInnerPage = !isHome && !isProductDetail;
+
+  const headerClass = [
+    styles.header,
+    scrolled ? styles.scrolled : "",
+    !scrolled && isInnerPage ? styles.light : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
+    <header className={headerClass}>
       <div className={`container ${styles.inner}`}>
         <Link href="/" className={styles.brand}>
           {siteConfig.name}

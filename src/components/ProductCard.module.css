@@ -1,45 +1,90 @@
 .card {
+  position: relative;
   display: grid;
-  grid-template-rows: 24rem 1fr;
   height: 100%;
+  min-height: 26rem;
   color: inherit;
   overflow: hidden;
+  background: #0f172a;
 }
 
 .card:hover {
   text-decoration: none;
-  border-color: var(--accent);
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: 0 8px 24px rgb(15 23 42 / 0.12);
 }
 
 .image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.72) saturate(0.96);
+  transition: transform 0.8s ease, filter 0.6s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.1);
+  filter: brightness(0.82);
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgb(0 0 0 / 0.88) 0%,
+    rgb(0 0 0 / 0.55) 35%,
+    transparent 65%
+  );
 }
 
 .body {
-  padding: 1.25rem 1.5rem 1.5rem;
+  position: relative;
+  z-index: 2;
+  align-self: end;
+  padding: 1.25rem 1.5rem 1.75rem;
   display: grid;
-  gap: 0.6rem;
+  gap: 0.4rem;
 }
 
 .name {
   font-size: 1.25rem;
-  color: var(--accent);
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgb(0 0 0 / 0.3);
 }
 
 .card:hover .name {
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .description {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+.learnMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #93c5fd;
+  margin-top: 0.25rem;
+}
+
+.card:hover .learnMore {
+  gap: 0.7rem;
 }
 
 @media (min-width: 48rem) {
   .card {
-    grid-template-rows: 28rem 1fr;
+    min-height: 32rem;
   }
 }
