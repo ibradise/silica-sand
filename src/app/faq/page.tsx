@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { siteConfig, telHref } from "@/config/site";
 import styles from "./faq.module.css";
 
 export const metadata: Metadata = {
@@ -52,34 +53,61 @@ const questions = [
 ];
 
 export default function FaqPage() {
+  const { contacts } = siteConfig;
+  const primary = contacts[0];
+
   return (
-    <section className="section">
-      <div className="container">
-        <div className="page-header">
-          <h1 className="section-title">Frequently asked questions</h1>
-          <p className="muted intro">
+    <>
+      <section className={`section ${styles.heroSection}`}>
+        <div className="container">
+          <p className={styles.eyebrow}>[ FAQ ]</p>
+          <h1 className={styles.title}>Frequently asked questions</h1>
+          <p className={styles.intro}>
             Common questions about our products, ordering and office visits.
           </p>
         </div>
+      </section>
 
-        <div className={styles.list}>
-          {questions.map((item) => (
-            <details key={item.q} className={`card ${styles.item}`}>
-              <summary className={styles.question}>{item.q}</summary>
-              <p className={styles.answer}>{item.a}</p>
-            </details>
-          ))}
+      <section className="section">
+        <div className="container">
+          <div className={styles.list}>
+            {questions.map((item) => (
+              <details key={item.q} className={`card ${styles.item}`}>
+                <summary className={styles.question}>{item.q}</summary>
+                <p className={styles.answer}>{item.a}</p>
+              </details>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div className={styles.cta}>
-          <p>Still have questions?</p>
-          <p>
-            <Link href="/contact" className="button button-primary">
-              Contact us
-            </Link>
-          </p>
+      <section className={`section ${styles.ctaSection}`}>
+        <div className="container">
+          <div className={styles.ctaCard}>
+            <div className={styles.ctaContent}>
+              <p className={styles.eyebrow}>[ STILL HAVE QUESTIONS? ]</p>
+              <h2 className={styles.ctaTitle}>We are happy to help</h2>
+              <p className={styles.ctaText}>
+                Can not find the answer you are looking for? Get in touch and we
+                will respond as soon as possible.
+              </p>
+              <div className={styles.ctaActions}>
+                {primary?.phone && (
+                  <a
+                    href={telHref(primary.phone)}
+                    className="button button-primary"
+                  >
+                    Call {primary.phone}
+                  </a>
+                )}
+                <Link href="/contact" className="button button-secondary">
+                  Contact us
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
