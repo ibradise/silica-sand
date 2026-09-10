@@ -19,12 +19,12 @@ export const metadata: Metadata = {
 
 const questions = [
   {
-    q: "What silica products do you sell?",
-    a: "We supply a range of silica products including silica sand, silica powder and silica quartz. Contact us for current availability and specifications.",
+    q: "What products do you supply?",
+    a: "We supply silica sand, white silica sand, river sand, river stone, limestone and crushed limestone from our office in Furi, Ethiopia.",
   },
   {
     q: "How do I place an order?",
-    a: "You can call us, send a WhatsApp message, or visit our office in person. We will confirm availability, pricing and delivery options.",
+    a: "Call us or visit our office in person. We will confirm availability, pricing and delivery options.",
   },
   {
     q: "Do you deliver?",
@@ -32,11 +32,11 @@ const questions = [
   },
   {
     q: "What are your opening hours?",
-    a: "Our office opening hours are [to be confirmed by the business owner]. Contact us by phone for the most up-to-date hours.",
+    a: "We are open Monday to Friday from 9:00 AM to 5:00 PM and Saturday from 9:00 AM to 12:30 PM. We are closed on Sunday.",
   },
   {
     q: "Where is your office located?",
-    a: "Our office is located in [City], Ethiopia. Visit our contact page for the address and directions.",
+    a: "Our office is in Furi, on the road from Jemo-3 to Furi in Sheger City, Oromia. Visit our contact page for the address and directions.",
   },
   {
     q: "Can I get a sample before ordering?",

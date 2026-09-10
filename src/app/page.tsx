@@ -147,7 +147,7 @@ export default function HomePage() {
                       {entry.phone}
                     </a>
                   )}
-                  {entry.email && !entry.phone?.includes("[") && (
+                  {entry.email && (
                     <a href={`mailto:${entry.email}`} className={styles.cardLink}>
                       {entry.email}
                     </a>
@@ -204,12 +204,12 @@ export default function HomePage() {
                 </div>
                 <div>
                   <p className={styles.ctaItemLabel}>Email</p>
-                  {contacts[0].email && !contacts[0].email.includes("[") ? (
+                  {contacts[0].email ? (
                     <a href={`mailto:${contacts[0].email}`} className={styles.ctaItemValue}>
                       {contacts[0].email}
                     </a>
                   ) : (
-                    <span className={styles.ctaItemMuted}>Set in site.ts</span>
+                    <span className={styles.ctaItemMuted}>Contact us by phone</span>
                   )}
                 </div>
               </div>

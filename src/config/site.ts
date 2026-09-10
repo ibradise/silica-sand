@@ -14,50 +14,45 @@ export type OpeningHoursEntry = {
 export type ContactEntry = {
   label: string;
   phone?: string;
-  email?: string;
+  email?: string | null;
   whatsapp?: string | null;
 };
 
 export const siteConfig = {
-  name: "[Business Name]",
-  legalName: "[Business Legal Name]",
+  name: "Diriba Silica Sand Supplier",
+  legalName: "Diriba Gemechu",
   description:
-    "Supplier of silica products in Ethiopia. Visit our office or contact us to discuss your requirements.",
+    "Supplier of silica sand, river sand, limestone and construction materials in Ethiopia. Visit our office on the road from Jemo-3 to Furi in Sheger City, Oromia, or call us to discuss your requirements.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
 
   contacts: [
     {
-      label: "[Contact 1, e.g. Sales / General inquiries]",
-      phone: "[+251 9XX XXX XXX]",
-      email: "[email, e.g. sales@business.com]",
-      whatsapp: "[WhatsApp number, e.g. +2519XXXXXXXX]",
-    },
-    {
-      label: "[Contact 2, e.g. Office / Owner]",
-      phone: "[+251 9XX XXX XXX]",
-      email: "[email, e.g. info@business.com]",
+      label: "Sales / General inquiries",
+      phone: "+251 911 465 526",
+      email: null,
       whatsapp: null,
     },
-  ] satisfies ContactEntry[],
+  ] as ContactEntry[],
 
   address: {
-    street: "[Street / Landmark, e.g. Bole Road, near Edna Mall]",
-    subCity: "[Sub-city, e.g. Bole]",
-    city: "[City, e.g. Addis Ababa]",
-    region: "[Region, e.g. Addis Ababa]",
+    street: "",
+    subCity: "Furi",
+    city: "Sheger",
+    region: "Oromia",
     country: "Ethiopia",
-    mapsLink: null as string | null,
+    mapsLink: "https://maps.app.goo.gl/93ocbhnSNXRjt4cdA" as string | null,
   },
 
   openingHours: [
-    { days: "Monday - Friday", hours: "8:30 AM - 5:30 PM" },
-    { days: "Saturday", hours: "9:00 AM - 1:00 PM" },
+    { days: "Monday - Friday", hours: "9:00 AM - 5:00 PM" },
+    { days: "Saturday", hours: "9:00 AM - 12:30 PM" },
     { days: "Sunday", hours: "Closed" },
   ] satisfies OpeningHoursEntry[],
 
   social: {
-    facebook: "https://facebook.com/[your-page]",
-    telegram: "https://t.me/[your-handle]",
+    facebook:
+      "https://www.facebook.com/profile.php?id=100090243952611",
+    telegram: null as string | null,
   },
 };
 
@@ -74,71 +69,47 @@ export const products: Product[] = [
     slug: "silica-sand",
     name: "Silica Sand",
     description:
-      "Silica sand available at our office. Contact us for current availability, specifications and pricing.",
-    image: "/images/sand.jpg",
+      "Natural silica sand available at our office. Contact us for current availability, specifications and pricing.",
+    image: "/images/silica-sand.webp",
     featured: true,
   },
   {
-    slug: "silica-powder",
-    name: "Silica Powder",
+    slug: "white-silica-sand",
+    name: "White Silica Sand",
     description:
-      "Silica powder available at our office. Contact us for current availability, specifications and pricing.",
-    image: "/images/powder.jpg",
+      "White silica sand available at our office. Contact us for current availability, specifications and pricing.",
+    image: "/images/white-silica-sand.webp",
     featured: true,
   },
   {
-    slug: "silica-quartz",
-    name: "Silica Quartz",
+    slug: "river-sand",
+    name: "River Sand",
     description:
-      "Silica quartz available at our office. Contact us for current availability, specifications and pricing.",
-    image: "/images/quartz.jpg",
+      "River sand available at our office. Contact us for current availability, specifications and pricing.",
+    image: "/images/river-sand.webp",
     featured: true,
   },
   {
-    slug: "industrial-silica",
-    name: "Industrial Silica",
+    slug: "river-stone",
+    name: "River Stone",
     description:
-      "Industrial silica available at our office. Contact us for current availability, specifications and pricing.",
-    image: "/images/placeholder.svg",
-    featured: true,
+      "River stone available at our office. Contact us for current availability, specifications and pricing.",
+    image: "/images/river-stone.webp",
   },
   {
-    slug: "silica-granules",
-    name: "Silica Granules",
+    slug: "limestone",
+    name: "Limestone",
     description:
-      "Silica granules available at our office. Contact us for current availability, specifications and pricing.",
-    image: "/images/placeholder.svg",
-    featured: true,
+      "Limestone available at our office. Contact us for current availability, specifications and pricing.",
+    image: "/images/limestone.webp",
   },
   {
-    slug: "quartz-sand",
-    name: "Quartz Sand",
+    slug: "crushed-limestone",
+    name: "Crushed Limestone",
     description:
-      "Quartz sand available at our office. Contact us for current availability, specifications and pricing.",
-    image: "/images/placeholder.svg",
-    featured: true,
+      "Crushed limestone available at our office. Contact us for current availability, specifications and pricing.",
+    image: "/images/crushed-limestone.webp",
   },
-  {
-  slug: "silica-stone",
-  name: "Silica Stone",
-  description:
-    "Silica stone available at our office. Contact us for current availability, specifications and pricing.",
-  image: "/images/placeholder.svg",
-},
-{
-  slug: "silica-material",
-  name: "Silica Material",
-  description:
-    "Silica material available at our office. Contact us for current availability, specifications and pricing.",
-  image: "/images/placeholder.svg",
-},
-{
-  slug: "quartz-material",
-  name: "Quartz Material",
-  description:
-    "Quartz material available at our office. Contact us for current availability, specifications and pricing.",
-  image: "/images/placeholder.svg",
-},
 ];
 
 export const featuredProducts: Product[] = products.filter(

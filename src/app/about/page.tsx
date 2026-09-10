@@ -28,8 +28,8 @@ export default function AboutPage() {
           <p className={styles.eyebrow}>[ ABOUT US ]</p>
           <h1 className={styles.title}>Who we are</h1>
           <p className={styles.intro}>
-            Learn about our business, what we stand for and why customers trust
-            us for their silica product needs.
+            Diriba Gemechu Silica Sand Supplier supplies silica sand and
+            construction materials from our office in Furi, Ethiopia.
           </p>
         </div>
       </section>
@@ -40,37 +40,37 @@ export default function AboutPage() {
             <div className={`card ${styles.card}`}>
               <h2>Our story</h2>
               <p>
-                [Company history to be provided by the business owner. This
-                section should cover how the business started, what motivated it,
-                and how it has grown.]
+                Our business was started to supply quality silica sand and
+                construction materials to customers in Ethiopia. We are based in
+                Furi and serve businesses and individuals in the surrounding
+                area.
               </p>
             </div>
 
             <div className={`card ${styles.card}`}>
               <h2>What we do</h2>
               <p>
-                We supply silica products to businesses across Ethiopia from our
-                office in [City]. Our customers include companies in construction,
-                manufacturing, glass production and other industries that depend on
-                quality silica materials.
+                We supply silica sand, white silica sand, river sand, river
+                stone, limestone and crushed limestone from our office in Furi,
+                on the road from Jemo-3 to Furi.
               </p>
             </div>
 
             <div className={`card ${styles.card}`}>
               <h2>Our mission</h2>
               <p>
-                [Mission statement to be provided by the business owner. What does
-                the business aim to achieve? What do they stand for?]
+                To provide reliable supply of essential materials at our office
+                and to give customers clear, honest answers about availability,
+                specifications and pricing.
               </p>
             </div>
 
             <div className={`card ${styles.card}`}>
               <h2>Why choose us</h2>
               <p>
-                [Reasons customers choose this business. These should come directly
-                from the owner — for example: quality products, reliable supply,
-                competitive pricing, convenient location, experienced team. Only
-                include claims the owner can back up.]
+                Easy to reach on the road from Jemo-3 to Furi, with products
+                available directly at our office. Call us or visit to discuss
+                your requirements.
               </p>
             </div>
           </div>

@@ -3,6 +3,9 @@ import { siteConfig, type OpeningHoursEntry } from "@/config/site";
 const isPlaceholder = (value: string | null | undefined): boolean =>
   typeof value === "string" && value.includes("[");
 
+const clean = (value: string | null | undefined): string | undefined =>
+  value && !isPlaceholder(value) ? value : undefined;
+
 const DAY_MAP: Record<string, string> = {
   monday: "Monday",
   tuesday: "Tuesday",
@@ -91,9 +94,9 @@ export function LocalBusinessJsonLd() {
           email: primaryEmail,
           address: {
             "@type": "PostalAddress",
-            streetAddress: isPlaceholder(address.street) ? undefined : address.street,
-            addressLocality: isPlaceholder(address.city) ? undefined : address.city,
-            addressRegion: isPlaceholder(address.region) ? undefined : address.region,
+            streetAddress: clean(address.street),
+            addressLocality: clean(address.city),
+            addressRegion: clean(address.region),
             addressCountry: "ET",
           },
           openingHoursSpecification:

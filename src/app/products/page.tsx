@@ -7,11 +7,11 @@ import styles from "./products.module.css";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Silica sand, silica powder and silica quartz available for businesses across Ethiopia.",
+    "Silica sand, white silica sand, river sand, river stone, limestone and crushed limestone available from our office in Furi, Ethiopia.",
   openGraph: {
     title: "Products",
     description:
-      "Silica sand, silica powder and silica quartz available for businesses across Ethiopia.",
+      "Silica sand, white silica sand, river sand, river stone, limestone and crushed limestone available from our office in Furi, Ethiopia.",
   },
   alternates: {
     canonical: "./products",
@@ -41,9 +41,9 @@ export default function ProductsPage() {
             )}
           </div>
           <p className={styles.intro}>
-            We supply a range of silica products for construction, manufacturing,
-            glass production and other industries. Contact us for current
-            availability, specifications and pricing.
+            We supply silica sand, white silica sand, river sand, river stone,
+            limestone and crushed limestone from our office in Furi, Ethiopia.
+            Contact us for current availability, specifications and pricing.
           </p>
         </div>
       </section>
