@@ -10,7 +10,7 @@
 
 .heroImage {
   object-fit: cover;
-  filter: brightness(0.6);
+  filter: brightness(0.75);
 }
 
 .heroScrim {
@@ -18,8 +18,8 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgb(0 0 0 / 0.3) 0%,
-    rgb(0 0 0 / 0.7) 100%
+    rgb(0 0 0 / 0.15) 0%,
+    rgb(0 0 0 / 0.5) 100%
   );
 }
 

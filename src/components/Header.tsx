@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navigation, siteConfig } from "@/config/site";
@@ -34,7 +35,15 @@ export function Header() {
     <header className={headerClass}>
       <div className={`container ${styles.inner}`}>
         <Link href="/" className={styles.brand}>
-          {siteConfig.name}
+          <Image
+            src="/images/logo.jpg"
+            alt="Diriba Silica Sand Supplier logo"
+            width={32}
+            height={32}
+            className={styles.brandLogo}
+            priority
+          />
+          <span>{siteConfig.name}</span>
         </Link>
         <nav aria-label="Main navigation" className={styles.desktopNav}>
           <ul className={styles.nav}>

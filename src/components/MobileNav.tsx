@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navigation, siteConfig } from "@/config/site";
@@ -43,7 +44,14 @@ export function MobileNav() {
             className={styles.brand}
             onClick={() => setOpen(false)}
           >
-            {siteConfig.name}
+            <Image
+              src="/images/logo.jpg"
+              alt="Diriba Silica Sand Supplier logo"
+              width={28}
+              height={28}
+              className={styles.brandLogo}
+            />
+            <span>{siteConfig.name}</span>
           </Link>
         </div>
         <ul className={styles.mobileNavList}>

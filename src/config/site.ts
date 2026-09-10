@@ -22,7 +22,7 @@ export const siteConfig = {
   name: "Diriba Silica Sand Supplier",
   legalName: "Diriba Gemechu",
   description:
-    "Supplier of silica sand, river sand, limestone and construction materials in Ethiopia. Visit our office on the road from Jemo-3 to Furi in Sheger City, Oromia, or call us to discuss your requirements.",
+    "Supplier of silica sand, river sand, limestone and construction materials in Ethiopia. Visit our office at Kina Mall, 4th Floor, on the road from Jemo-3 to Furi in Sheger City, or call us to discuss your requirements.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
 
   contacts: [
@@ -35,7 +35,7 @@ export const siteConfig = {
   ] as ContactEntry[],
 
   address: {
-    street: "",
+    street: "Kina Mall, 4th Floor",
     subCity: "Furi",
     city: "Sheger",
     region: "Oromia",
@@ -82,14 +82,6 @@ export const products: Product[] = [
     featured: true,
   },
   {
-    slug: "river-sand",
-    name: "River Sand",
-    description:
-      "River sand available at our office. Contact us for current availability, specifications and pricing.",
-    image: "/images/river-sand.webp",
-    featured: true,
-  },
-  {
     slug: "river-stone",
     name: "River Stone",
     description:
@@ -102,6 +94,14 @@ export const products: Product[] = [
     description:
       "Limestone available at our office. Contact us for current availability, specifications and pricing.",
     image: "/images/limestone.webp",
+  },
+  {
+    slug: "river-sand",
+    name: "River Sand",
+    description:
+      "River sand available at our office. Contact us for current availability, specifications and pricing.",
+    image: "/images/river-sand.webp",
+    featured: true,
   },
   {
     slug: "crushed-limestone",

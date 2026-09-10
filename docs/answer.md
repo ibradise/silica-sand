@@ -38,7 +38,7 @@ This data goes directly into the website. Only filled-in values will be publishe
 
 **2.4** Does the office have a sign or visible branding from the road?
 
-> Answer: _______________________________________________________
+> Answer: kina mall   (the office is in the kina mall 4th floor )
 
 ---
 
