@@ -42,8 +42,7 @@ export default function AboutPage() {
               <p>
                 Our business was started to supply quality silica sand and
                 construction materials to customers in Ethiopia. We are based in
-                Furi and serve businesses and individuals in the surrounding
-                area.
+                Furi and sululta serve businesses and individuals in any area in Ethiopia.
               </p>
             </div>
 
@@ -51,8 +50,7 @@ export default function AboutPage() {
               <h2>What we do</h2>
               <p>
                 We supply silica sand, white silica sand, river sand, river
-                stone, limestone and crushed limestone from our office in Furi,
-                on the road from Jemo-3 to Furi.
+                stone, limestone and crushed limestone and construction materials.
               </p>
             </div>
 
